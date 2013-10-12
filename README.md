@@ -14,3 +14,7 @@ You can download and compile it but there is also a .jar already made for you to
 ###Don't know Portuguese?
 
 Yeah, I'm still doing translations so that's why the mixing of languages.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ismaelga/snake-java/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
