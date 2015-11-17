@@ -1,28 +1,26 @@
 package org.ismaelga.snake.game;
 
 import java.util.Random;
+
+import naomexer.Atores;
+import naomexer.CorpoCobra;
+import naomexer.Posicao;
 /**
  * Cria uma cobra que irá movimentar-se automaticamente
  * 
  * @Ismael
  * @04-2010
  */
-public class CobraAuto extends Cobra
-{
+public class CobraAuto extends Cobra {
     // instance variables - replace the example below with your own
-
-
-    /**
+   /**
      * Construtor da classe Cobra_auto
      */
-    public CobraAuto()
-    {
+    public CobraAuto(){
         super();
     }
     
-    
-    public void actua(Terreno terreno)
-    {
+    public void actua(Terreno terreno){
         String ladoRand;
         Random rand = new Random();
         int numRand;
@@ -32,7 +30,7 @@ public class CobraAuto extends Cobra
         int lin;
         int col;
         Posicao novaPos;
-        Actor actor;
+        Atores actor;
         boolean morre;
         
         
@@ -90,7 +88,7 @@ public class CobraAuto extends Cobra
                 tentativa++;
             }
         }
-        }while(tentativa < 6 && morre == true);
+        } while(tentativa < 6 && morre == true);
         this.moveCobra(ladoRand, terreno);
     }
 
