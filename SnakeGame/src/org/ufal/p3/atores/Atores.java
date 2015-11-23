@@ -14,6 +14,12 @@ public abstract class Atores {
 	// Estado vivo caso true ou morto caso false
 	private boolean alive;
 
+	public final void templateAtor(Terreno terreno){
+		
+		actua(terreno);
+	}
+	
+	
 	/**
 	 * Construtor para um actor
 	 */

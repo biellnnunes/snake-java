@@ -34,18 +34,12 @@ public class ControlColor extends Controller {
 		return instance;
 	}
 	
-	public ControlColor(){
-		super();
-	}
-
-
 	public void alterarCores() {
 		final int numButtons = 4;
 		final JFrame frameC = new JFrame("Config. colors");
 		JRadioButton[] radioButtons = new JRadioButton[numButtons];
 		final ButtonGroup group = new ButtonGroup();
 
-		// Cobra Jogador
 		radioButtons[0] = new JRadioButton("Player: Blue, Computer: Red, Egg: Green, Mongoose: Preto, Scarab: Yellow");
 		radioButtons[0].setActionCommand("1");
 		radioButtons[1] = new JRadioButton("Player: Red, Computer: Green, Egg: Blue, Mongoose: Gray, Scarab: Black");
@@ -65,7 +59,6 @@ public class ControlColor extends Controller {
 			public void actionPerformed(ActionEvent e) {
 				String command = group.getSelection().getActionCommand();
 
-				// Cobra Jogador
 				if (command == "1") {
 					setColor(CobraHuman.class, Color.blue);
 					setColor(CobraAuto.class, Color.red);

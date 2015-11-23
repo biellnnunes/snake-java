@@ -9,15 +9,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -108,16 +102,12 @@ public class Controller extends JFrame {
 		JMenu menuConfigurar = new JMenu("Settings");
 		JMenu menuAjuda = new JMenu("Help");
 		JMenuItem JogoNovo = new JMenuItem("Novo Jogo");
-		JMenuItem JogoGravar = new JMenuItem("Gravar Jogo");
-		JMenuItem JogoCarregar = new JMenuItem("Carregar Jogo");
 		JMenuItem JogoParar = new JMenuItem("Stop the game");
 		JMenuItem JogoContinuar = new JMenuItem("Resume the game");
 		JMenuItem JogoSair = new JMenuItem("Exit");
 		JMenu menuJogo = new JMenu("Game");
 		
 		menuJogo.add(JogoNovo);
-		menuJogo.add(JogoGravar);
-		menuJogo.add(JogoCarregar);
 		menuJogo.add(JogoParar);
 		menuJogo.add(JogoContinuar);
 		menuJogo.add(JogoSair);
@@ -129,24 +119,6 @@ public class Controller extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				pausa = true;
 				novoJogo();
-			}
-		});
-		// Gravar Jogo
-		JogoGravar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				pausa = true;
-				guardarJogo();
-			}
-		});
-		// Carregar Jogo
-		JogoCarregar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				pausa = true;
-				try {
-					carregaJogo();
-				} catch (IOException ex) {
-					ex.printStackTrace();
-				}
 			}
 		});
 		// Parar Jogo
@@ -184,7 +156,7 @@ public class Controller extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				pausa = true;
 				if (jogo != null)
-					m.menssagem("Player name:  " + jogo.getNomeJogador()/*Facade.getInstancia().getNome()*/);
+					m.menssagem("Player name:  " + jogo.getNomeJogador());
 				else
 					m.menssagem("Game not yet started!");
 			}
@@ -194,7 +166,7 @@ public class Controller extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				pausa = true;
 				if (jogo != null)
-					m.menssagem("You have  " + /*Facade.getInstancia().getPontos()*/ jogo.getPontos() + "  points");
+					m.menssagem("You have  " +  jogo.getPontos() + "  points");
 				else
 					m.menssagem("Game not yet started!");
 			}
@@ -296,7 +268,6 @@ public class Controller extends JFrame {
 			if (jogo.isFim())
 				fim();
 			else if (pausa == false) {
-				//Facade.getInstancia().mandaActuar();
 				jogo.mandaActuar();
 				showStatus();
 				proximoPasso();
@@ -409,40 +380,6 @@ public class Controller extends JFrame {
 			showStatus();
 			pausa = true;
 		}
-	}
-
-	public void guardarJogo() {
-		pausa = true;
-		String nomeFicheiro = (String) JOptionPane.showInputDialog(this, "Save Game\n" + "Name this game:", "SnakeGame",
-				JOptionPane.PLAIN_MESSAGE, null, null, jogo.getNomeJogador());
-		if ((nomeFicheiro != null) && !nomeFicheiro.equals(""))
-			try {
-				FileOutputStream fil = new FileOutputStream(nomeFicheiro);
-				ObjectOutputStream out = new ObjectOutputStream(fil);
-				out.writeObject(jogo);
-				out.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-	}
-
-	public void carregaJogo() throws IOException {
-		JFileChooser escolhedor = new JFileChooser();
-		int estado = escolhedor.showOpenDialog(null);
-		if (estado == 0) {
-			try {
-				FileInputStream fil = new FileInputStream(escolhedor.getSelectedFile());
-				ObjectInputStream in = new ObjectInputStream(fil);
-				jogo = (Jogo) in.readObject();
-				in.close();
-			} catch (ClassNotFoundException e) {
-				throw new IOException("Problem des-serializing items!");
-			}
-			showStatus(jogo.getTerreno());
-		}
-
-		this.pack();
-		showStatus();
 	}
 
 	public void fim() {

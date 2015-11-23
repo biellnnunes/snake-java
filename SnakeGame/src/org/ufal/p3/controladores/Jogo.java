@@ -104,7 +104,7 @@ public class Jogo {
 		Atores actor;
 		for (int i = 0; i < actores.size(); i++) {
 			actor = (Atores) actores.get(i);
-			actor.actua(terreno);
+			actor.templateAtor(terreno);
 			this.limpaMortos();
 		}
 
@@ -323,6 +323,4 @@ public class Jogo {
 		criaNovoOvo();
 
 	}
-
-	
 }

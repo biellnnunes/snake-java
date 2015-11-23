@@ -6,7 +6,6 @@ package org.ufal.p3.controladores;
  * @Ismael @04-2010
  */
 public class Posicao {
-	// instance variables - replace the example below with your own
 	private int lin;
 	private int col;
 
