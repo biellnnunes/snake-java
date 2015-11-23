@@ -3,14 +3,6 @@ package org.ismaelga.snake.game;
 import java.util.Random;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Collections;
-import java.util.Timer;
-import java.util.TimerTask;
-import java.awt.Color;
-import java.io.*;
-import javax.swing.JFileChooser;
-
 import naomexer.Atores;
 import naomexer.CobraHuman;
 import naomexer.Ovo;
@@ -22,7 +14,7 @@ import naomexer.Posicao;
  * 
  * @Ismael @04-2010
  */
-public class Jogo implements java.io.Serializable {
+public class Jogo {
 	// Probabilidade de aparecer um escaravelho.
 	private static final double PROBABILIDADE_CRIAR_ESCARAVELHO = 0.01;
 	// Probabilidade de aparecer um mangusto.
@@ -33,11 +25,10 @@ public class Jogo implements java.io.Serializable {
 	private static final double PROBABILIDADE_DIURETICO = 0.15;
 	// Tempo que demora um passo a correr.
 	private static final int TEMPO_ENTRE_PASSOS = 500;
-	// tempo que vai retirar ao tempo que demora 1 passo.
+	// tempo que vai retirar ao tempo que demora 1 passo. 
 	private static final int TEMPO_AUMENTADO_POR_NIVEL = 25;
 	// Em cada 100 passos é mudado o nivel
 	private static final int PASSOS_POR_NIVEL = 5;
-
 	// contador dos passos no jogo
 	private int passo;
 	// terreno do jogo
@@ -49,11 +40,9 @@ public class Jogo implements java.io.Serializable {
 	private Ovo ovo;
 	private String nomeJogador;
 	private int tempoEntrePassos;
-	// private boolean pausa;
-	// A graphical view of the simulation.
 	private boolean fim;
 	private int nivel;
-
+		
 	/**
 	 * Construtor de jogo com altura e largura originais.
 	 * 
@@ -76,8 +65,6 @@ public class Jogo implements java.io.Serializable {
 	 */
 	public Jogo(int largura, int altura, String nome) {
 		if (largura <= 21 || altura <= 21) {
-			System.out.println("As dimensôes têm de ser maior que zero.");
-			System.out.println("Criado na dimensão pré-definida.");
 			altura = 51;
 			largura = 51;
 		}
@@ -256,76 +243,6 @@ public class Jogo implements java.io.Serializable {
 		terreno.coloca(novoMangusto);
 	}
 
-	private void posicoesCobra(Cobra cobra) {
-		if (cobra instanceof CobraHuman) {
-			System.out.println("Posicao da cabeça da sua cobra: " + cobra.getPosicao());
-		} else {
-			System.out.println("Posicao da cabeça da cobra do computador: " + cobra.getPosicao());
-		}
-
-		List<?> corpoCobra = cobra.getCorpo();
-		Atores peça;
-		System.out.println("posicoes do corpo:");
-		for (int j = 0; j < corpoCobra.size(); j++) {
-			peça = (Atores) corpoCobra.get(j);
-			System.out.println(peça.getPosicao());
-		}
-	}
-
-	private void posicoes() {
-		Atores actor;
-		Ovo actorOvo;
-		String separador = "-----------------------------------------------------------";
-		if (cobraHumana.isAlive()) {
-			System.out.println();
-			System.out.println(separador);
-			// Posicoes das cobras
-			if (cobraHumana.isAlive())
-				posicoesCobra(cobraHumana);
-			if (cobraAuto.isAlive())
-				posicoesCobra(cobraAuto);
-
-			// Posicoes dos restantes actores
-			System.out.println();
-			System.out.println("Restantes actores: ");
-
-			for (int i = 0; i < actores.size(); i++) {
-				actor = (Atores) actores.get(i);
-
-				if (actor instanceof Ovo) {
-					actorOvo = (Ovo) actor;
-					System.out.println("Posicao do Ovo: " + actor.getPosicao() + "    Tipo: " + (actorOvo.getTipo()));
-				} else if (actor instanceof Escaravelho)
-					System.out.println("Posicao do Escaravelho: " + actor.getPosicao());
-				else if (actor instanceof Mangusto)
-					System.out.println("Posicao do Mangusto: " + actor.getPosicao());
-			}
-		}
-	}
-
-	private void estadoJogo() {
-		String separador = "-----------------------------------------------------------";
-
-		System.out.println(separador);
-		System.out.println("Jogador: " + nomeJogador + "   nº de jogadas: " + passo + "   pontos: "
-				+ cobraHumana.getPontos() + "   nivel: " + getNivel());
-		System.out.println(separador);
-		System.out.println("Cobra Utilizador -> VIDAS: " + cobraHumana.getVidas() + " OVOS: "
-				+ cobraHumana.getOvosComidos() + " LADO VIRADA: " + cobraHumana.getLadoVirada());
-		System.out.println("Cobra Computador -> VIDAS: " + cobraAuto.getVidas() + " OVOS: " + cobraAuto.getOvosComidos()
-				+ " LADO VIRADA: " + cobraAuto.getLadoVirada());
-		System.out.println(separador);
-	}
-
-	public String getEstadoJogo() {
-		return "Jogador: " + nomeJogador + "   nº de jogadas: " + passo + "   pontos: " + cobraHumana.getPontos()
-				+ "   nivel: " + getNivel();
-	}
-
-	public String getEstadoJogador() {
-		return "Cobra Utilizador -> VIDAS: " + cobraHumana.getVidas() + " OVOS: " + cobraHumana.getOvosComidos();
-	}
-
 	/**
 	 * Recomeça o jogo colocando actores, pontos etc no estado inicial
 	 */
@@ -401,4 +318,6 @@ public class Jogo implements java.io.Serializable {
 		criaNovoOvo();
 
 	}
+
+	
 }

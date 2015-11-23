@@ -7,7 +7,7 @@ import org.ismaelga.snake.game.Terreno;
  * 
  * @Ismael @04-2010
  */
-public abstract class Atores implements java.io.Serializable {
+public abstract class Atores {
 	// Posicao do actor
 	private Posicao posicao;
 	// Estado vivo caso true ou morto caso false

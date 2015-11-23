@@ -12,7 +12,9 @@ import naomexer.Posicao;
  * aleatoriamente e irá morrer passados N passos.
  * 
  * @Ismael @04-2010
+ * @Gabriel @11-2015
  */
+@SuppressWarnings("serial")
 public class Mangusto extends Atores {
 	// instance variables - replace the example below with your own
 	private static final int TEMPO_VIDA = 20;

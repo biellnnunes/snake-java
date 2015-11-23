@@ -1,14 +1,16 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.ui;
 
 import java.awt.*;
 import javax.swing.*;
 
 /**
- * Game board.
+ * Model Game board.
  * 
  * @Ismael @06-2010
+ * @Gabriel @11-2015
  */
-public class FieldView extends JPanel {
+@SuppressWarnings("serial")
+public class Model extends JPanel {
 
 	private final int GRID_VIEW_SCALING_FACTOR = 7;
 
@@ -21,7 +23,7 @@ public class FieldView extends JPanel {
 	/**
 	 * Create a new FieldView component.
 	 */
-	public FieldView(int height, int width) {
+	public Model(int height, int width) {
 		gridHeight = height;
 		gridWidth = width;
 		size = new Dimension(0, 0);
@@ -85,6 +87,7 @@ public class FieldView extends JPanel {
 	 * Paint on grid location on this field in a given color. If the color its
 	 * white draws a rectangular shape, if not draw an oval.
 	 */
+	@SuppressWarnings("static-access")
 	public void drawMark(int x, int y, Color color) {
 		g.setColor(color);
 		if (color == color.white)

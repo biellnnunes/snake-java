@@ -26,6 +26,25 @@ public abstract class Cobra extends Atores {
 	private int vidas;
 	private int pontos;
 	private int tonta;
+	
+	
+	private static Cobra instance = null;
+
+	public static Cobra getInstance() {
+
+		if (instance == null) {
+			instance = new Cobra() {
+				
+				@Override
+				public void actua(Terreno terreno) {
+					// TODO Auto-generated method stub
+					
+				}
+			};
+		}
+		return instance;
+	}
+
 
 	abstract public void actua(Terreno terreno);
 
@@ -40,6 +59,7 @@ public abstract class Cobra extends Atores {
 		vidas = 3;
 		tonta = 0;
 	}
+	
 
 	/**
 	 * Movimenta a cobra

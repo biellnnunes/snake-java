@@ -9,9 +9,9 @@ import naomexer.Posicao;
  * Guarda actores nas posicoes e disponibliliza metodos para manipulação
  * 
  * @Ismael @04-2010
+ * @Gabriel @11-2015
  */
-public class Terreno implements java.io.Serializable {
-	// instance variables - replace the example below with your own
+public class Terreno {
 	private int largura, altura;
 	private Atores[][] terreno;
 
@@ -41,11 +41,12 @@ public class Terreno implements java.io.Serializable {
 		terreno[posicao.getLinha()][posicao.getColuna()] = actor;
 		if (actor instanceof Cobra) {
 			Cobra cobra = (Cobra) actor;
-			coloca(cobra.getCorpo());
+			colocaCobra(cobra.getCorpo());
 		}
 	}
 
-	private void coloca(List corpoCobra) {
+	@SuppressWarnings("rawtypes")
+	private void colocaCobra(List corpoCobra) {
 		for (int i = 0; i <= corpoCobra.size() - 1; i++) {
 			Atores pedaço = (Atores) corpoCobra.get(i);
 			Posicao posicao = pedaço.getPosicao();

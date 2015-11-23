@@ -5,7 +5,7 @@ package naomexer;
  * 
  * @Ismael @04-2010
  */
-public class Posicao implements java.io.Serializable {
+public class Posicao {
 	// instance variables - replace the example below with your own
 	private int lin;
 	private int col;
