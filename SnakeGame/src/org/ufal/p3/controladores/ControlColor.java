@@ -1,10 +1,9 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.controladores;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -12,18 +11,18 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import org.ufal.p3.atores.CobraAuto;
+import org.ufal.p3.atores.CobraHuman;
+import org.ufal.p3.atores.Escaravelho;
+import org.ufal.p3.atores.Mangusto;
+import org.ufal.p3.atores.Ovo;
 import org.ufal.p3.ui.Controller;
 import org.ufal.p3.ui.MainView;
-import naomexer.Atores;
-import naomexer.CobraHuman;
-import naomexer.CorpoCobra;
-import naomexer.Ovo;
 
+@SuppressWarnings("serial")
 public class ControlColor extends Controller {
 	
 	MainView m = new MainView();
-	private static final Color UNKNOWN_COLOR = Color.gray;
-	private HashMap<Class<?>, Color> colors;
 
 	private static ControlColor instance = null;
 

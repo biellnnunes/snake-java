@@ -17,9 +17,6 @@ import java.io.ObjectOutputStream;
 import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
-import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -27,20 +24,16 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-
-import org.ismaelga.snake.game.CobraAuto;
-import org.ismaelga.snake.game.Escaravelho;
-import org.ismaelga.snake.game.Facade;
-import org.ismaelga.snake.game.Jogo;
-import org.ismaelga.snake.game.Mangusto;
-import org.ismaelga.snake.game.Terreno;
-
-import naomexer.Atores;
-import naomexer.CobraHuman;
-import naomexer.CorpoCobra;
-import naomexer.Ovo;
+import org.ufal.p3.atores.Atores;
+import org.ufal.p3.atores.CobraAuto;
+import org.ufal.p3.atores.CobraHuman;
+import org.ufal.p3.atores.CorpoCobra;
+import org.ufal.p3.atores.Escaravelho;
+import org.ufal.p3.atores.Mangusto;
+import org.ufal.p3.atores.Ovo;
+import org.ufal.p3.controladores.Facade;
+import org.ufal.p3.controladores.Jogo;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Main class for the game Classe responsavel por toda interface, por certas

@@ -1,6 +1,6 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.controladores;
 
-import naomexer.Atores;
+import org.ufal.p3.atores.Atores;
 
 public class Facade {
 

@@ -1,13 +1,11 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.atores;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Random;
 
-import naomexer.Atores;
-import naomexer.CorpoCobra;
-import naomexer.Ovo;
-import naomexer.Posicao;
+import org.ufal.p3.controladores.Posicao;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Classe cobra onde fica definido a localização da cabeça e guardado as partes

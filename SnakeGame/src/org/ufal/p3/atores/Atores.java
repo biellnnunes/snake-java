@@ -1,6 +1,7 @@
-package naomexer;
+package org.ufal.p3.atores;
 
-import org.ismaelga.snake.game.Terreno;
+import org.ufal.p3.controladores.Posicao;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Abstract class Actor - Guarda atributos dos actores do jogo.

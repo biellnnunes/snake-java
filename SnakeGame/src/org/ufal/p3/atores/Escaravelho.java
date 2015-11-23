@@ -1,11 +1,9 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.atores;
 
 import java.util.Random;
 
-import naomexer.Atores;
-import naomexer.CorpoCobra;
-import naomexer.Ovo;
-import naomexer.Posicao;
+import org.ufal.p3.controladores.Posicao;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Cria um escaravelho que se irá movimentar este morre passado N passos.

@@ -1,11 +1,9 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.atores;
 
 import java.util.Random;
 
-import naomexer.Atores;
-import naomexer.CorpoCobra;
-import naomexer.Ovo;
-import naomexer.Posicao;
+import org.ufal.p3.controladores.Posicao;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Class Mangusto cria um mangusto que irá comer cobras e este irá mexer-se
@@ -14,7 +12,6 @@ import naomexer.Posicao;
  * @Ismael @04-2010
  * @Gabriel @11-2015
  */
-@SuppressWarnings("serial")
 public class Mangusto extends Atores {
 	// instance variables - replace the example below with your own
 	private static final int TEMPO_VIDA = 20;

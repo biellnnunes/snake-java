@@ -1,4 +1,4 @@
-package naomexer;
+package org.ufal.p3.controladores;
 
 /**
  * Classe que cria uma posicao que irá ser atribuida a um actor

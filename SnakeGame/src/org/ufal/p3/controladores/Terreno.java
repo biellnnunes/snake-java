@@ -1,9 +1,9 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.controladores;
 
 import java.util.List;
 
-import naomexer.Atores;
-import naomexer.Posicao;
+import org.ufal.p3.atores.Atores;
+import org.ufal.p3.atores.Cobra;
 
 /**
  * Guarda actores nas posicoes e disponibliliza metodos para manipulação

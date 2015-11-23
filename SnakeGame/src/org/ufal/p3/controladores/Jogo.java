@@ -1,12 +1,17 @@
-package org.ismaelga.snake.game;
+package org.ufal.p3.controladores;
 
 import java.util.Random;
+
+import org.ufal.p3.atores.Atores;
+import org.ufal.p3.atores.Cobra;
+import org.ufal.p3.atores.CobraAuto;
+import org.ufal.p3.atores.CobraHuman;
+import org.ufal.p3.atores.Escaravelho;
+import org.ufal.p3.atores.Mangusto;
+import org.ufal.p3.atores.Ovo;
+
 import java.util.List;
 import java.util.ArrayList;
-import naomexer.Atores;
-import naomexer.CobraHuman;
-import naomexer.Ovo;
-import naomexer.Posicao;
 
 /**
  * Classe principal do projecto Snake I. É esta classe que fornece todo o

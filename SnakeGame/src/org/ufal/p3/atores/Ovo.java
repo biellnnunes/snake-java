@@ -1,6 +1,6 @@
-package naomexer;
+package org.ufal.p3.atores;
 
-import org.ismaelga.snake.game.Terreno;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Classe Ovo permite criar um ovo com um determinado tipo

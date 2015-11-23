@@ -1,7 +1,6 @@
-package naomexer;
+package org.ufal.p3.atores;
 
-import org.ismaelga.snake.game.Cobra;
-import org.ismaelga.snake.game.Terreno;
+import org.ufal.p3.controladores.Terreno;
 
 /**
  * Partes para constituir o corpo da cobra
